@@ -1,0 +1,10 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    right: 0;
+    left: auto;
+    top: 100%;
+    transform: translateX(-50%);
+}

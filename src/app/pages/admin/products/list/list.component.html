@@ -1,0 +1,40 @@
+<div class="container my-4 text-center">
+    <h2 class="font-weight-bold text-uppercase mb-4 mt-5">DANH SÁCH SẢN PHẨM</h2>
+    <div class="card-body">
+        <div class="row mb-4 mt-2">
+            <label class="col-1 col-form-label text-end">Filter:</label>
+            <div class="col-3">
+                <input type="text" class="form-control rounded-pill" [(ngModel)]='filterValue' (input)='filter()'>
+            </div>
+            <div class="col"></div>
+        </div>
+        <table class="table table-striped text-center">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Code</th>
+                    <th>Available</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products | paginate: { itemsPerPage: 6, currentPage: page }">
+                    <td><img [src]="product.imageUrl" alt="Product Image" style="max-width: 60px;"></td>
+                    <td class="border px-4 py-2">{{ product.productName }}</td>
+                    <td class="border px-4 py-2">{{ product.price }}</td>
+                    <td class="border px-4 py-2">{{ product.productCode }}</td>
+                    <td class="border px-4 py-2">{{ product.description }}</td>
+                    <td>
+                        <button class="btn btn-primary mr-2" (click)="viewProduct(product.id)">View</button>
+
+                        <button class="btn btn-warning mr-2">Edit</button>
+                        <button class="btn btn-danger" (click)="deleteProduct(product)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>

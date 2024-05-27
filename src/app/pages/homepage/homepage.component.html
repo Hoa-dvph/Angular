@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="container product-list">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let product of products">
+            <div class="card mb-4">
+                <img [src]="product.imageUrl" alt="{{product.productName}}" class="card-img-top"
+                    [routerLink]="['client/products', product.id]" />
+                <div class="card-body">
+                    <h5 class="card-title">{{product.productName}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <p class="card-text"><strong>{{product.price}}$</strong></p>
+                    <button class="btn btn-primary">Order Now</button>
+                    <button class="btn btn-success">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
