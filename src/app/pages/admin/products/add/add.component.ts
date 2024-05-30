@@ -76,5 +76,8 @@ export class ProductAddComponent implements OnInit {
     });
 
   }
+  back() {
+    this.router.navigate(['/admin/products/list']);
+  }
 
 }

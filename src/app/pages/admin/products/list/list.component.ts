@@ -96,7 +96,9 @@ export class ProductListComponent implements OnInit {
   viewProduct(id: number) {
     this.router.navigate(['/client/products', id]);
   }
-
+  addProduct() {
+    this.router.navigate(['/admin/products/create']);
+  }
   editProduct(id: number) {
     this.router.navigate(['/admin/products', id, 'edit']);
   }
