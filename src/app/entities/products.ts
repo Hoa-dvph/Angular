@@ -7,4 +7,8 @@ export interface IProduct {
     description: string;
     starRating: number;
     imageUrl: string;
+    category: number;
 }
+export type ProductAdd = Omit<IProduct, 'id' | 'rating'> & {
+    rate: number;
+};

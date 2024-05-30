@@ -1,0 +1,60 @@
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Thêm sản phẩm</h3>
+<div class="container">
+    <form [formGroup]="addProductForm" (ngSubmit)="handleSubmit()">
+        <div class="form-group">
+            <label for="productName">Tên sản phẩm</label>
+            <input type="text" class="form-control" id="productName" formControlName="productName"
+                [class.is-invalid]="addProductForm.get('productName')?.invalid && addProductForm.get('productName')?.touched" />
+            <small
+                *ngIf="addProductForm.get('productName')?.errors?.['required'] && addProductForm.get('productName')?.touched"
+                class="text-danger text-small">Tên sản phẩm là bắt buộc</small>
+            <small
+                *ngIf="addProductForm.get('productName')?.errors?.['minlength'] && addProductForm.get('productName')?.touched"
+                class="text-danger text-small">Tên sản phẩm phải có ít nhất 6 ký tự</small>
+        </div>
+        <div class="form-group">
+            <label for="imageUrl">Image</label>
+            <input type="text" class="form-control" id="imageUrl" formControlName="imageUrl"
+                [class.is-invalid]="addProductForm.get('imageUrl')?.invalid && addProductForm.get('imageUrl')?.touched" />
+            <small
+                *ngIf="addProductForm.get('imageUrl')?.errors?.['required'] && addProductForm.get('imageUrl')?.touched"
+                class="text-danger text-small">Image is Required</small>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control" id="category" formControlName="category"
+                [class.is-invalid]="addProductForm.get('category')?.invalid && addProductForm.get('category')?.touched">
+                <option value="">Select Category</option>
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+            </select>
+            <small
+                *ngIf="addProductForm.get('category')?.errors?.['required'] && addProductForm.get('category')?.touched"
+                class="text-danger text-small">Category is Required</small>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price" formControlName="price"
+                [class.is-invalid]="addProductForm.get('price')?.invalid && addProductForm.get('price')?.touched" />
+            <small *ngIf="addProductForm.get('price')?.errors?.['required'] && addProductForm.get('price')?.touched"
+                class="text-danger text-small">Price is Required</small>
+            <small *ngIf="addProductForm.get('price')?.errors?.['pattern'] && addProductForm.get('price')?.touched"
+                class="text-danger text-small">Price must be a number</small>
+            <small *ngIf="addProductForm.get('price')?.errors?.['min'] && addProductForm.get('price')?.touched"
+                class="text-danger text-small">Price must be greater than 0</small>
+        </div>
+
+        <div class="form-group">
+            <label for="productCode">productCode</label>
+            <input type="text" class="form-control" id="productCode" formControlName="productCode" />
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" class="form-control" formControlName="description"
+                [class.is-invalid]="addProductForm.get('description')?.invalid && addProductForm.get('description')?.touched"></textarea>
+            <small
+                *ngIf="addProductForm.get('description')?.errors?.['required'] && addProductForm.get('description')?.touched"
+                class="text-danger text-small">Description is Required</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

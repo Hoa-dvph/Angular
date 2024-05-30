@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Sửa sản phẩm</h3>
+    <div *ngIf="successMessage" class="alert alert-success mb-3" role="alert">
+        {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger mb-3" role="alert">
+        {{ errorMessage }}
+    </div>
+    <form [formGroup]="editProductForm" (ngSubmit)="handleEdit()">
+        <div class="mb-3">
+            <label for="productName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="productName" formControlName="productName">
+            <div *ngIf="editProductForm.get('productName')?.invalid && editProductForm.get('productName')?.touched"
+                class="text-danger">Tên sản phẩm là bắt buộc và phải có ít nhất 6 ký tự</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" rows="3" formControlName="description"></textarea>
+            <div *ngIf="editProductForm.get('description')?.invalid && editProductForm.get('description')?.touched"
+                class="text-danger">Mô tả là bắt buộc</div>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price" formControlName="price"
+                [class.is-invalid]="editProductForm.get('price')?.invalid && editProductForm.get('price')?.touched" />
+            <small *ngIf="editProductForm.get('price')?.errors?.['required'] && editProductForm.get('price')?.touched"
+                class="text-danger text-small">Price is Required</small>
+            <small *ngIf="editProductForm.get('price')?.errors?.['pattern'] && editProductForm.get('price')?.touched"
+                class="text-danger text-small">Price must be a number</small>
+            <small *ngIf="editProductForm.get('price')?.errors?.['min'] && editProductForm.get('price')?.touched"
+                class="text-danger text-small">Price must be greater than 0</small>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" id="category" formControlName="category">
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+            </select>
+            <div *ngIf="editProductForm.get('category')?.invalid && editProductForm.get('category')?.touched"
+                class="text-danger">Danh mục là bắt buộc</div>
+        </div>
+        <div class="mb-3">
+            <label for="imageUrl" class="form-label">Image URL</label>
+            <input type="text" class="form-control" id="imageUrl" formControlName="imageUrl">
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+</div>

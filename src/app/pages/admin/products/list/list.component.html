@@ -14,22 +14,21 @@
                     <th>Image</th>
                     <th>Product</th>
                     <th>Price</th>
-                    <th>Code</th>
-                    <th>Available</th>
+                    <th>Description</th>
+                    <th>Category</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let product of products | paginate: { itemsPerPage: 6, currentPage: page }">
+                <tr *ngFor="let product of products | paginate: { itemsPerPage: 5, currentPage: page }">
                     <td><img [src]="product.imageUrl" alt="Product Image" style="max-width: 60px;"></td>
                     <td class="border px-4 py-2">{{ product.productName }}</td>
                     <td class="border px-4 py-2">{{ product.price }}</td>
-                    <td class="border px-4 py-2">{{ product.productCode }}</td>
                     <td class="border px-4 py-2">{{ product.description }}</td>
+                    <td class="border px-4 py-2">{{ getCategoryName(product.category) }}</td>
                     <td>
                         <button class="btn btn-primary mr-2" (click)="viewProduct(product.id)">View</button>
-
-                        <button class="btn btn-warning mr-2">Edit</button>
+                        <button class="btn btn-warning mr-2" (click)="editProduct(product.id)">Edit</button>
                         <button class="btn btn-danger" (click)="deleteProduct(product)">Delete</button>
                     </td>
                 </tr>

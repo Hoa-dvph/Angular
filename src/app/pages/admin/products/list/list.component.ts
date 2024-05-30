@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductService } from '../../../../services/product.service';
 import { Router } from '@angular/router'; // Import Router from @angular/router
+import { CategoryService } from '../../../../services/category.service';
 
 @Component({
   selector: 'app-list',
@@ -19,14 +20,24 @@ export class ProductListComponent implements OnInit {
   listProduct: IProduct[] = [];
   allProducts: IProduct[] = [];
   filterValue: string = '';
+  categories: any[] = [];
   page: number = 1;
 
   constructor(
-    private router: Router, // Inject Router in the constructor
-    private productService: ProductService // Inject ProductService in the constructor
-  ) { }
-  ngOnInit() {
-    this.loadProducts();
+    private router: Router,
+    private productService: ProductService,
+    private categoryService: CategoryService) { }
+
+  ngOnInit(): void {
+    this.categoryService.getCategories().subscribe({
+      next: (categories) => {
+        this.categories = categories;
+        this.loadProducts();
+      },
+      error: (error) => {
+        console.error('Error fetching categories:', error);
+      }
+    });
   }
 
   loadProducts() {
@@ -60,8 +71,8 @@ export class ProductListComponent implements OnInit {
   }
 
   updatePage() {
-    const start = (this.page - 1) * 10;
-    const end = start + 10;
+    const start = (this.page - 1) * 15;
+    const end = start + 15;
     this.products = this.listProduct.slice(start, end);
 
     if (this.products.length === 0 && this.page > 1) {
@@ -81,7 +92,16 @@ export class ProductListComponent implements OnInit {
     }
     this.updatePage();
   }
+
   viewProduct(id: number) {
-    this.router.navigate(['/client/products', id]); // <- Ensure to use absolute path here
+    this.router.navigate(['/client/products', id]);
+  }
+
+  editProduct(id: number) {
+    this.router.navigate(['/admin/products', id, 'edit']);
+  }
+  getCategoryName(categoryId: number): string {
+    const category = this.categories.find(cat => cat.id === categoryId);
+    return category ? category.name : '';
   }
 }

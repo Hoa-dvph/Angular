@@ -2,15 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { IProduct } from '../entities/products';
-
+import { IProduct, ProductAdd } from '../entities/products';
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   private apiURL = 'http://localhost:3000/products';
   constructor(private http: HttpClient) { }
-
+  generateProductId(): number {
+    // Implement your logic here to generate a new product id
+    // For example, you can use Math.random() to generate a random number
+    return Math.floor(Math.random() * 1000); // This generates a random number between 0 and 999
+  }
   getAllProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.apiURL).pipe(
       catchError(this.handleError)
@@ -19,6 +22,13 @@ export class ProductService {
 
   getProductDetail(id: number) {
     return this.http.get<IProduct>(`${this.apiURL}/${id}`);
+  }
+
+  addProduct(data: ProductAdd) {
+    return this.http.post(this.apiURL, data);
+  }
+  editProduct(product: ProductAdd, id: number) {
+    return this.http.put<IProduct>(`${this.apiURL}/${id}`, product);
   }
   deleteProduct(id: number): Observable<void> {
     const url = `${this.apiURL}/${id}`;

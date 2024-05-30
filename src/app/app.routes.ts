@@ -5,6 +5,8 @@ import { ClientLayoutComponent } from './layouts/client-layout/client-layout.com
 import { ProductDetailComponent } from './pages/products/detail/detail.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ProductAddComponent } from './pages/admin/products/add/add.component';
+import { ProductEditComponent } from './pages/admin/products/edit/edit.component';
 
 export const routes: Routes = [
     {
@@ -15,6 +17,9 @@ export const routes: Routes = [
                 path: 'products/list',
                 component: ProductListComponent,
             },
+            { path: 'products/create', component: ProductAddComponent },
+            { path: 'products/:id/edit', component: ProductEditComponent },
+
         ],
     },
     {
@@ -33,8 +38,8 @@ export const routes: Routes = [
         component: HomepageComponent,
     },
     {
-        path: '**', // Đường dẫn mặc định cho trang not found
-        component: NotFoundComponent, // Component cho trang not found
+        path: '**',
+        component: NotFoundComponent,
     }
 
 ];

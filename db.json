@@ -1,104 +1,132 @@
 {
-    "products": [
-        {
-            "id": "3",
-            "productName": "MLB Basic Small Logo T-Shirts New York",
-            "productCode": "ÁO PHÔNG",
-            "releaseDate": "May 21, 2016",
-            "description": "Curved claw steel hammer",
-            "price": 11.99,
-            "starRating": 4.8,
-            "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2023/04/ao-phong-mlb-basic-small-logo-t-shirts-new-york-yankees-3atsb0233-50bks-mau-den-size-m-644606a1bdb27-24042023113337.jpg"
-        },
-        {
-            "id": "4",
-            "productName": "MLB Logo LA Dodgers 3ATS03023",
-            "productCode": "ÁO PHÔNG",
-            "releaseDate": "May 15, 2016",
-            "description": "15-inch steel blade hand saw",
-            "price": 15.55,
-            "starRating": 3.7,
-            "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2022/06/ao-phong-mlb-logo-la-dodgers-3ats03023-07mgl-mau-xam-629eb238b0477-07062022090440.jpg"
-        },
-        {
-            "id": "6",
-            "productName": "MLB The Year Of Tiger Short Sleeve",
-            "productCode": "ÁO PHÔNG",
-            "releaseDate": "May 15, 2016",
-            "description": "15-inch steel blade hand saw",
-            "price": 17.55,
-            "starRating": 4.2,
-            "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2022/06/ao-phong-mlb-the-year-of-tiger-short-sleeve-t-shirt-detroit-tigers-3atsc2021-46bks-mau-den-size-m-629efbe916ec9-07062022141905.jpg"
-        },
-        {
-            "id": "7",
-            "productName": "Mũ New Era 9Fifty Snapback Rockies",
-            "productCode": "MŨ",
-            "releaseDate": "May 15, 2016",
-            "description": "15-inch steel blade hand saw",
-            "price": 21.55,
-            "starRating": 4.3,
-            "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/03/mu-new-era-9fifty-snapback-rockies-cap-mau-den-65e8320f776d4-06032024160623.jpg"
-        },
-        {
-            "id": "8",
-            "productName": "Mũ New Era 9Fifty Snapback Cap New York",
-            "productCode": "MŨ",
-            "releaseDate": "May 15, 2016",
-            "description": "15-inch steel blade hand saw",
-            "price": 24.99,
-            "starRating": 4.4,
-            "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/03/mu-new-era-9fifty-snapback-cap-new-york-yankees-mau-do-65f8ef5eec02a-19032024085022.jpg"
-        },
-        {
-            "id": "10",
-            "productName": "Quần Short MLB LA Dodgers 3ASMB0333",
-            "productCode": "QUẦN SHORT",
-            "releaseDate": "May 15, 2016",
-            "description": "15-inch steel blade hand saw",
-            "price": 27.99,
-            "starRating": 4.4,
-            "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2023/06/quan-short-mlb-la-dodgers-3asmb0333-07sbl-mau-xanh-blue-648832eaab590-13062023161210.jpg"
-        },
-        {
-            "id": "11",
-            "productName": "Quần Short MLB New York Yankees 3ASMB0223",
-            "productCode": "QUẦN SHORT",
-            "releaseDate": "May 15, 2016",
-            "description": "15-inch steel blade hand saw",
-            "price": 34.99,
-            "starRating": 4.6,
-            "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2022/08/quan-shorts-mlb-new-york-yankees-3asmb0223-50bgs-mau-be-62ea440b4bff3-03082022164651.jpg"
-        },
-        {
-            "id": "12",
-            "productName": "Giày Lười Nam Tommy Hilfiger Men's Loafers Màu Đen",
-            "productCode": "GIÀY",
-            "releaseDate": "May 15, 2016",
-            "description": "15-inch steel blade hand saw",
-            "price": 39.99,
-            "starRating": 4.7,
-            "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/02/giay-luoi-nam-tommy-hilfiger-men-s-black-loafers-mau-den-size-41-65d9470e31b3a-24022024083158.jpg"
-        },
-        {
-            "id": "13",
-            "productName": "Giày Lười Nam Tommy Hilfiger Men's Black Màu Đen",
-            "productCode": "GIÀY",
-            "releaseDate": "May 15, 2016",
-            "description": "15-inch steel blade hand saw",
-            "price": 44.99,
-            "starRating": 4.8,
-            "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/03/giay-luoi-nam-tommy-hilfiger-men-s-black-mau-den-size-40-5-65e5972757ea2-04032024164055.jpg"
-        },
-        {
-            "id": "14",
-            "productName": "Giày Thể Thao Nam Tommy Hilfiger FM0FM04364",
-            "productCode": "GIÀY THỂ THAO",
-            "releaseDate": "May 15, 2016",
-            "description": "15-inch steel blade hand saw",
-            "price": 49.99,
-            "starRating": 4.9,
-            "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/02/giay-the-thao-nam-tommy-hilfiger-fm0fm04364_bianco_ybr-mau-trang-size-40-65d8404570fca-23022024135045.jpg"
-        }
-    ]
+  "products": [
+    {
+      "productName": "MLB Basic Small Logo T-Shirts New York 1",
+      "productCode": "",
+      "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2023/04/ao-phong-mlb-basic-small-logo-t-shirts-new-york-yankees-3atsb0233-50bks-mau-den-size-m-644606a1bdb27-24042023113337.jpg",
+      "category": "2",
+      "description": "oke đ",
+      "price": "121",
+      "showProduct": true,
+      "id": "3"
+    },
+    {
+      "productName": "MLB Logo LA Dodgers 3ATS03023",
+      "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2022/06/ao-phong-mlb-logo-la-dodgers-3ats03023-07mgl-mau-xam-629eb238b0477-07062022090440.jpg",
+      "category": "1",
+      "price": 15.55,
+      "description": "15-inch steel blade hand saw",
+      "id": "4"
+    },
+    {
+      "productName": "MLB The Year Of Tiger Short Sleeve",
+      "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2022/06/ao-phong-mlb-the-year-of-tiger-short-sleeve-t-shirt-detroit-tigers-3atsc2021-46bks-mau-den-size-m-629efbe916ec9-07062022141905.jpg",
+      "category": "2",
+      "price": 17.55,
+      "description": "15-inch steel blade hand saw",
+      "id": "6"
+    },
+    {
+      "productName": "Mũ New Era 9Fifty Snapback Rockies",
+      "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/03/mu-new-era-9fifty-snapback-rockies-cap-mau-den-65e8320f776d4-06032024160623.jpg",
+      "category": "5",
+      "price": 21.55,
+      "description": "15-inch steel blade hand saw",
+      "id": "7"
+    },
+    {
+      "productName": "Mũ New Era 9Fifty Snapback Cap New York",
+      "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/03/mu-new-era-9fifty-snapback-cap-new-york-yankees-mau-do-65f8ef5eec02a-19032024085022.jpg",
+      "category": "5",
+      "price": 24.99,
+      "description": "15-inch steel blade hand saw",
+      "id": "8"
+    },
+    {
+      "productName": "Quần Short MLB LA Dodgers 3ASMB0333",
+      "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2023/06/quan-short-mlb-la-dodgers-3asmb0333-07sbl-mau-xanh-blue-648832eaab590-13062023161210.jpg",
+      "category": "7",
+      "price": 27.99,
+      "description": "15-inch steel blade hand saw",
+      "id": "10"
+    },
+    {
+      "id": "11",
+      "productName": "Quần Short MLB New York Yankees 3ASMB0223",
+      "productCode": "QUẦN SHORT",
+      "releaseDate": "May 15, 2016",
+      "description": "15-inch steel blade hand saw",
+      "price": 34.99,
+      "starRating": 4.6,
+      "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2022/08/quan-shorts-mlb-new-york-yankees-3asmb0223-50bgs-mau-be-62ea440b4bff3-03082022164651.jpg"
+    },
+    {
+      "id": "12",
+      "productName": "Giày Lười Nam Tommy Hilfiger Men's Loafers Màu Đen",
+      "productCode": "GIÀY",
+      "releaseDate": "May 15, 2016",
+      "description": "15-inch steel blade hand saw",
+      "price": 39.99,
+      "starRating": 4.7,
+      "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/02/giay-luoi-nam-tommy-hilfiger-men-s-black-loafers-mau-den-size-41-65d9470e31b3a-24022024083158.jpg"
+    },
+    {
+      "id": "13",
+      "productName": "Giày Lười Nam Tommy Hilfiger Men's Black Màu Đen",
+      "productCode": "GIÀY",
+      "releaseDate": "May 15, 2016",
+      "description": "15-inch steel blade hand saw",
+      "price": 44.99,
+      "starRating": 4.8,
+      "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/03/giay-luoi-nam-tommy-hilfiger-men-s-black-mau-den-size-40-5-65e5972757ea2-04032024164055.jpg"
+    },
+    {
+      "productName": "sản phẩm a",
+      "productCode": "12112",
+      "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2023/04/ao-phong-mlb-basic-small-logo-t-shirts-new-york-yankees-3atsb0233-50bks-mau-den-size-m-644606a1bdb27-24042023113337.jpg",
+      "category": "2",
+      "price": "121",
+      "showProduct": true,
+      "id": "693"
+    },
+    {
+      "productName": "sản phẩm b",
+      "productCode": "",
+      "imageUrl": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2023/04/ao-phong-mlb-basic-small-logo-t-shirts-new-york-yankees-3atsb0233-50bks-mau-den-size-m-644606a1bdb27-24042023113337.jpg",
+      "category": "4",
+      "price": "1213",
+      "showProduct": true,
+      "id": "224"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Áo thun"
+    },
+    {
+      "id": "2",
+      "name": "Áo phông"
+    },
+    {
+      "id": "3",
+      "name": "Quần jean"
+    },
+    {
+      "id": "4",
+      "name": "Áo phông"
+    },
+    {
+      "id": "5",
+      "name": "Mũ"
+    },
+    {
+      "id": "6",
+      "name": "Giày thể thao"
+    },
+    {
+      "id": "7",
+      "name": "Khác"
+    }
+  ]
 }
