@@ -1,47 +1,60 @@
-<div class="container mt-5">
-    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Sửa sản phẩm</h3>
-    <div *ngIf="successMessage" class="alert alert-success mb-3" role="alert">
-        {{ successMessage }}
-    </div>
-    <div *ngIf="errorMessage" class="alert alert-danger mb-3" role="alert">
-        {{ errorMessage }}
-    </div>
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white"
+    style="font-size: 2em; font-weight: bold; margin-bottom: 20px; margin-left: 380px;">Thêm sản phẩm</h3>
+<div class="container">
     <form [formGroup]="editProductForm" (ngSubmit)="handleEdit()">
-        <div class="mb-3">
-            <label for="productName" class="form-label">Name</label>
-            <input type="text" class="form-control" id="productName" formControlName="productName">
-            <div *ngIf="editProductForm.get('productName')?.invalid && editProductForm.get('productName')?.touched"
-                class="text-danger">Tên sản phẩm là bắt buộc và phải có ít nhất 6 ký tự</div>
+        <div class="form-group">
+            <label for="productName">Tên sản phẩm</label>
+            <input type="text" class="form-control" id="productName" formControlName="productName" />
+            <small
+                *ngIf="editProductForm.get('productName')?.errors?.['required'] && editProductForm.get('productName')?.touched"
+                class="text-danger text-small">Tên sản phẩm là bắt buộc</small>
+            <small
+                *ngIf="editProductForm.get('productName')?.errors?.['minlength'] && editProductForm.get('productName')?.touched"
+                class="text-danger text-small">Tên sản phẩm phải có ít nhất 6 ký tự</small>
         </div>
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" rows="3" formControlName="description"></textarea>
-            <div *ngIf="editProductForm.get('description')?.invalid && editProductForm.get('description')?.touched"
-                class="text-danger">Mô tả là bắt buộc</div>
+        <div class="form-group">
+            <label for="imageUrl">Image</label>
+            <input type="text" class="form-control" id="imageUrl" formControlName="imageUrl"
+                [class.is-invalid]="editProductForm.get('imageUrl')?.invalid && editProductForm.get('imageUrl')?.touched" />
+            <small
+                *ngIf="editProductForm.get('imageUrl')?.errors?.['required'] && editProductForm.get('imageUrl')?.touched"
+                class="text-danger text-small">Ảnh là bắt buộc</small>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select class="form-control" id="category" formControlName="category"
+                [class.is-invalid]="editProductForm.get('category')?.invalid && editProductForm.get('category')?.touched">
+                <option value="">Select Category</option>
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+            </select>
+            <small
+                *ngIf="editProductForm.get('category')?.errors?.['required'] && editProductForm.get('category')?.touched"
+                class="text-danger text-small">Danh mục là bắt buộc</small>
         </div>
         <div class="form-group">
             <label for="price">Price</label>
             <input type="text" class="form-control" id="price" formControlName="price"
                 [class.is-invalid]="editProductForm.get('price')?.invalid && editProductForm.get('price')?.touched" />
             <small *ngIf="editProductForm.get('price')?.errors?.['required'] && editProductForm.get('price')?.touched"
-                class="text-danger text-small">Price is Required</small>
+                class="text-danger text-small">Giá là bắt buộc</small>
             <small *ngIf="editProductForm.get('price')?.errors?.['pattern'] && editProductForm.get('price')?.touched"
-                class="text-danger text-small">Price must be a number</small>
+                class="text-danger text-small">Phải là số</small>
             <small *ngIf="editProductForm.get('price')?.errors?.['min'] && editProductForm.get('price')?.touched"
-                class="text-danger text-small">Price must be greater than 0</small>
+                class="text-danger text-small">Phải lớn hơn 0</small>
         </div>
-        <div class="mb-3">
-            <label for="category" class="form-label">Category</label>
-            <select class="form-select" id="category" formControlName="category">
-                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
-            </select>
-            <div *ngIf="editProductForm.get('category')?.invalid && editProductForm.get('category')?.touched"
-                class="text-danger">Danh mục là bắt buộc</div>
+        <div class="form-group">
+            <label for="productCode">productCode</label>
+            <input type="text" class="form-control" id="productCode" formControlName="productCode"
+                [class.is-invalid]="editProductForm.get('productCode')?.invalid && editProductForm.get('productCode')?.touched" />
+            <small
+                *ngIf="editProductForm.get('productCode')?.errors?.['required'] && editProductForm.get('productCode')?.touched"
+                class="text-danger text-small">Mã sản phẩm là bắt buộc</small>
         </div>
-        <div class="mb-3">
-            <label for="imageUrl" class="form-label">Image URL</label>
-            <input type="text" class="form-control" id="imageUrl" formControlName="imageUrl">
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" class="form-control" formControlName="description"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <button type="submit" class="btn btn-primary" [disabled]="editProductForm.invalid">Submit</button>
+        <button type="reset" class="btn btn-danger" (click)="back()">Cancel</button>
     </form>
 </div>

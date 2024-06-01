@@ -22,6 +22,7 @@ export class ProductAddComponent implements OnInit {
 
   categories: any[] = [];
   successMessage: string = '';
+  showCheckbox: boolean = true;
 
   constructor(
     private productService: ProductService,
@@ -31,24 +32,20 @@ export class ProductAddComponent implements OnInit {
 
   addProductForm: FormGroup = new FormGroup({
     productName: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    productCode: new FormControl(''),
+    productCode: new FormControl('', [Validators.required]),
     imageUrl: new FormControl('', [Validators.required]),
     category: new FormControl('', [Validators.required]),
     description: new FormControl(''),
     price: new FormControl('', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/), Validators.min(0.01)]), // Sử dụng Validators.min để đảm bảo giá trị > 0
-    showProduct: new FormControl(true)
   });
 
 
   handleSubmit() {
-    // Kiểm tra xem form có hợp lệ không
     if (this.addProductForm.invalid) {
-      // Nếu form không hợp lệ, hiển thị thông báo lỗi
       alert("Vui lòng điền đầy đủ thông tin!");
       return;
     }
 
-    // Nếu form hợp lệ, tiến hành thêm sản phẩm
     const newProduct = { ...this.addProductForm.value, id: this.productService.generateProductId().toString() };
     console.log("New product:", newProduct);
 

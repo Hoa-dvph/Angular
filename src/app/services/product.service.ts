@@ -10,9 +10,8 @@ export class ProductService {
   private apiURL = 'http://localhost:3000/products';
   constructor(private http: HttpClient) { }
   generateProductId(): number {
-    // Implement your logic here to generate a new product id
-    // For example, you can use Math.random() to generate a random number
-    return Math.floor(Math.random() * 1000); // This generates a random number between 0 and 999
+
+    return Math.floor(Math.random() * 1000);
   }
   getAllProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(this.apiURL).pipe(

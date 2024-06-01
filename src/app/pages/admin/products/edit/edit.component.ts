@@ -32,7 +32,7 @@ export class ProductEditComponent {
 
   editProductForm: FormGroup = new FormGroup({
     productName: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    productCode: new FormControl(''),
+    productCode: new FormControl('', [Validators.required]),
     imageUrl: new FormControl('', [Validators.required]),
     category: new FormControl('', [Validators.required]),
     description: new FormControl(''),
@@ -57,10 +57,10 @@ export class ProductEditComponent {
       return;
     }
 
-    const productId = +this.route.snapshot.params['id']; // Lấy ID từ URL và chuyển thành số (nếu cần)
+    const productId = +this.route.snapshot.params['id'];
     this.productService.editProduct(this.editProductForm.value, productId).subscribe({
       next: () => {
-        this.successMessage = 'Sửa sản phẩm thành công!';
+        alert('Sửa sản phẩm thành công!');
         this.router.navigate(['/admin/products/list']);
       },
       error: (error) => {
@@ -68,5 +68,8 @@ export class ProductEditComponent {
         console.error(error.message);
       },
     });
+  }
+  back() {
+    this.router.navigate(['/admin/products/list']);
   }
 }
