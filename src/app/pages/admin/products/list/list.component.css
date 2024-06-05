@@ -1,18 +1,13 @@
 .container {
-    margin-top: 40px;
+    width: 1300px;
+    height: auto;
 }
 
 h2 {
     color: #333;
 }
 
-.card-body {
-    padding: 20px;
-}
 
-.row {
-    margin-bottom: 20px;
-}
 
 .col-form-label {
     font-weight: bold;
@@ -24,50 +19,55 @@ h2 {
 
 .table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
 }
 
+/* Padding and text alignment for table headers and cells */
 .table th,
 .table td {
     padding: 10px;
     text-align: center;
+    background-color: transparent;
 }
 
+/* Background color and text color for table headers */
 .table th {
     background-color: #007bff;
     color: #fff;
 }
 
+/* Striped background for odd rows in tables */
 .table-striped tbody tr:nth-child(odd) {
     background-color: #f2f2f2;
 }
 
+/* Padding and border radius for buttons */
 .btn {
     padding: 8px 16px;
     border-radius: 20px;
 }
 
+/* Primary button style */
 .btn-primary {
     background-color: #007bff;
+    color: #fff;
 }
 
+/* Warning button style */
 .btn-warning {
     background-color: #ffc107;
-    /* Yellow color for warning button */
+    color: #fff;
+    /* White text color for warning button */
 }
 
+/* Danger button style */
 .btn-danger {
     background-color: #dc3545;
-    /* Red color for danger button */
-}
-
-.btn-primary,
-.btn-warning,
-.btn-danger {
     color: #fff;
-    /* White text color for buttons */
+    /* White text color for danger button */
 }
 
+/* Hover effect for buttons */
 .btn-primary:hover,
 .btn-warning:hover,
 .btn-danger:hover {

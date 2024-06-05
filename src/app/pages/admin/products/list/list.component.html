@@ -6,27 +6,27 @@
     </div>
     <div class="card-body">
         <div class="row mb-4 mt-2">
-            <label class="col-1 col-form-label text-end">Filter:</label>
+            <label class="col-1 col-form-label text-nowrap">Filter:</label>
             <div class="col-3">
                 <input type="text" class="form-control rounded-pill" [(ngModel)]='filterValue' (input)='filter()'>
             </div>
             <div class="col"></div>
         </div>
-        <table class="table table-striped text-center">
+        <table class="table text-center">
             <thead>
                 <tr>
-                    <th>Image</th>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th>Category</th>
-                    <th>Action</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Ảnh</th>
+                    <th>Giá sản phẩm</th>
+                    <th>Chi tiết sản phẩm</th>
+                    <th>Danh mục</th>
+                    <th>Chức năng</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let product of products | paginate: { itemsPerPage: 5, currentPage: page }">
-                    <td><img [src]="product.imageUrl" alt="Product Image" style="max-width: 60px;"></td>
                     <td class="border px-4 py-2">{{ product.productName }}</td>
+                    <td><img [src]="product.imageUrl" alt="Product Image" style="max-width: 60px;"></td>
                     <td class="border px-4 py-2">{{ product.price }}</td>
                     <td class="border px-4 py-2">{{ product.description }}</td>
                     <td class="border px-4 py-2">{{ getCategoryName(product.category) }}</td>

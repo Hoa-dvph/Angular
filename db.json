@@ -129,5 +129,35 @@
       "id": "7",
       "name": "Khác"
     }
+  ],
+  "users": [
+    {
+      "id": "41d1",
+      "username": "hoa2k4",
+      "email": "hoa2k4bh2@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "23b5",
+      "username": "hoa2k4",
+      "email": "hoa2k4bh2@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "b06a",
+      "username": "hoa2k4",
+      "email": "huongchan0000@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "8b5a",
+      "username": "hoa2k4",
+      "email": "hoa2k4bh2@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
+    }
   ]
 }

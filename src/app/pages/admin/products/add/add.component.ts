@@ -13,7 +13,7 @@ import { CategoryService } from '../../../../services/category.service';
 @Component({
   selector: 'app-add',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, NgFor, ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf, NgFor],
   templateUrl: './add.component.html',
   styleUrl: './add.component.css',
 })

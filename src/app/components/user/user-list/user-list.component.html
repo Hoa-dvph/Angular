@@ -1,0 +1,22 @@
+<div class="container">
+    <h3 class="text-lg font-semibold text-gray-900 dark:text-white"
+        style="font-size: 2em; font-weight: bold; margin-bottom: 20px; margin-left: 380px;">Danh sách người dùng</h3>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Tên tài khoản</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td><button class="btn btn-danger" (click)="deleteUser(user.id)">Xóa</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
