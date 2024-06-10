@@ -2,11 +2,11 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ReactiveFormsModule, ValidatorFn } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule, NgIf, NgFor],
+  imports: [ReactiveFormsModule, NgIf, NgFor, NgClass],
   standalone: true,
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
     this.authService.register(this.registerForm.value).subscribe(
       response => {
         alert('Đăng ký thành công');
-        this.router.navigate(['/signup']);
+        this.router.navigate(['/signin']);
       },
       error => {
         console.error('Đăng ký thất bại:', error);

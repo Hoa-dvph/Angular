@@ -2,17 +2,18 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf, NgFor],
+  imports: [ReactiveFormsModule, NgIf, NgFor, NgClass],
   templateUrl: './signin.component.html',
-  styleUrl: './signin.component.css'
+  styleUrls: ['./signin.component.css']  // Corrected styleUrls typo
 })
 export class SigninComponent implements OnInit {
   signinForm!: FormGroup;
+  loginError: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -27,21 +28,26 @@ export class SigninComponent implements OnInit {
     });
   }
 
+  get f(): { [key: string]: AbstractControl } {
+    return this.signinForm.controls;
+  }
+
   onSubmit(): void {
     if (this.signinForm.invalid) {
       return;
     }
+
     this.authService.login(this.signinForm.value).subscribe(
       isLoggedIn => {
         if (isLoggedIn) {
-          alert('Đăng nhập thành công');
           this.router.navigate(['/']);
         } else {
-          alert('Đăng nhập không thành công. Vui lòng kiểm tra lại email và mật khẩu.');
+          this.loginError = 'Đăng nhập không thành công. Vui lòng kiểm tra lại email và mật khẩu.';
         }
       },
       error => {
         console.error('Đăng nhập thất bại:', error);
+        this.loginError = 'Đăng nhập thất bại. Vui lòng thử lại sau.';
       }
     );
   }

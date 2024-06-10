@@ -10,11 +10,14 @@ import { ProductEditComponent } from './pages/admin/products/edit/edit.component
 import { RegisterComponent } from './components/user/register/register.component';
 import { SigninComponent } from './components/user/signin/signin.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
+import { AuthGuard } from './auth.guard';
+import { LogoutComponent } from './components/user/logout/logout.component';
 
 export const routes: Routes = [
     {
         path: 'admin',
         component: AdminLayoutComponent,
+        canActivate: [AuthGuard], // Protect all admin routes
         children: [
             {
                 path: 'products/list',
@@ -54,6 +57,7 @@ export const routes: Routes = [
     {
         path: '**',
         component: NotFoundComponent,
-    }
+    },
+    { path: 'logout', component: LogoutComponent },
 
 ];

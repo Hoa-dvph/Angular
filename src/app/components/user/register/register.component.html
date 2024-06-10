@@ -1,44 +1,49 @@
-<h3 class="text-lg font-semibold text-gray-900 dark:text-white"
-    style="font-size: 2em; font-weight: bold; margin-bottom: 20px; margin-left: 380px;">Đăng kí tài khoản</h3>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="username">Tên đăng nhập</label>
-        <input type="text" class="form-control" id="username" formControlName="username">
-        <div *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)"
-            class="error-message">
-            <div *ngIf="registerForm.get('username')?.errors?.['required']">Tên đăng nhập là bắt buộc.</div>
-            <div *ngIf="registerForm.get('username')?.errors?.['minlength']">Tên đăng nhập phải có ít nhất 6 ký tự.
+<div class="container">
+    <h3 class="text-lg font-semibold text-gray-900 dark:text-white header-title">Đăng kí tài khoản</h3>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+        <div class="form-group"
+            [ngClass]="{'has-error': registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)}">
+            <label for="username" class="form-label">Tên đăng nhập</label>
+            <input type="text" class="form-control" id="username" formControlName="username">
+            <div *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)"
+                class="error-message">
+                <div *ngIf="registerForm.get('username')?.errors?.['required']">Tên đăng nhập là bắt buộc.</div>
+                <div *ngIf="registerForm.get('username')?.errors?.['minlength']">Tên đăng nhập phải có ít nhất 6 ký tự.
+                </div>
             </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" formControlName="email">
-        <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)"
-            class="error-message">
-            <div *ngIf="registerForm.get('email')?.errors?.['required']">Email là bắt buộc.</div>
-            <div *ngIf="registerForm.get('email')?.errors?.['email']">Định dạng email không hợp lệ.</div>
-            <div *ngIf="registerForm.get('email')?.errors?.['emailExists']">Email đã tồn tại.</div>
+        <div class="form-group"
+            [ngClass]="{'has-error': registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)}">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+            <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)"
+                class="error-message">
+                <div *ngIf="registerForm.get('email')?.errors?.['required']">Email là bắt buộc.</div>
+                <div *ngIf="registerForm.get('email')?.errors?.['email']">Định dạng email không hợp lệ.</div>
+                <div *ngIf="registerForm.get('email')?.errors?.['emailExists']">Email đã tồn tại.</div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="password">Mật khẩu</label>
-        <input type="password" class="form-control" id="password" formControlName="password">
-        <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)"
-            class="error-message">
-            <div *ngIf="registerForm.get('password')?.errors?.['required']">Mật khẩu là bắt buộc.</div>
-            <div *ngIf="registerForm.get('password')?.errors?.['minlength']">Mật khẩu phải có ít nhất 6 ký tự.</div>
+        <div class="form-group"
+            [ngClass]="{'has-error': registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)}">
+            <label for="password" class="form-label">Mật khẩu</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+            <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)"
+                class="error-message">
+                <div *ngIf="registerForm.get('password')?.errors?.['required']">Mật khẩu là bắt buộc.</div>
+                <div *ngIf="registerForm.get('password')?.errors?.['minlength']">Mật khẩu phải có ít nhất 6 ký tự.</div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="confirmPassword">Xác nhận mật khẩu</label>
-        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
-        <div *ngIf="registerForm.errors?.['passwordMismatch'] && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)"
-            class="error-message">
-            Mật khẩu không khớp.
+        <div class="form-group"
+            [ngClass]="{'has-error': registerForm.get('confirmPassword')?.invalid && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)}">
+            <label for="confirmPassword" class="form-label">Xác nhận mật khẩu</label>
+            <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+            <div *ngIf="registerForm.errors?.['passwordMismatch'] && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)"
+                class="error-message">
+                Mật khẩu không khớp.
+            </div>
         </div>
-    </div>
-    <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid || registerForm.pending">Đăng
-        ký</button>
-    <a href="/signin">Đã có tài khoản?</a>
-</form>
+        <button type="submit" class="btn btn-primary submit-btn"
+            [disabled]="registerForm.invalid || registerForm.pending">Đăng ký</button>
+        <a href="/signin" class="signin-link">Đã có tài khoản?</a>
+    </form>
+</div>

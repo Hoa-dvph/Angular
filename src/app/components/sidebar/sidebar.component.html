@@ -6,7 +6,7 @@
     <hr class="my-3">
     <ul class="nav flex-column w-100">
         <li class="nav-item w-100">
-            <a href="admin/products/list" class="nav-link active" aria-current="page">
+            <a href="/admin/products/list" class="nav-link active" aria-current="page">
                 <i class="fas fa-home me-2"></i> Product
             </a>
         </li>
@@ -21,13 +21,18 @@
             </a>
         </li>
         <li class="nav-item w-100">
-            <a href="#" class="nav-link link-dark w-100">
+            <a href="/signin" class="nav-link link-dark w-100">
                 <i class="fas fa-sign-in-alt me-2"></i> Sign-In
             </a>
         </li>
         <li class="nav-item w-100">
-            <a href="#" class="nav-link link-dark w-100">
+            <a href="/signup" class="nav-link link-dark w-100">
                 <i class="fas fa-user-plus me-2"></i> Sign-Up
+            </a>
+        </li>
+        <li class="nav-item w-100">
+            <a href="/signin" class="nav-link link-dark w-100" (click)="logout()">
+                <i class="fas fa-sign-out-alt me-2"></i> Logout
             </a>
         </li>
     </ul>
@@ -45,7 +50,7 @@
             <li>
                 <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" href="/logout">Sign out</a></li>
         </ul>
     </div>
 </div>

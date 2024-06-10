@@ -1,6 +1,6 @@
 import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { Iuser } from '../../../entities/user';
+import { IUser } from '../../../entities/user';
 import { Observable } from 'rxjs';
 import { AsyncPipe, NgFor } from '@angular/common';
 
@@ -13,13 +13,13 @@ import { AsyncPipe, NgFor } from '@angular/common';
 
 })
 export class UserListComponent implements OnInit {
-  users: Iuser[] = [];
+  users: IUser[] = [];
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.authService.getUsers().subscribe(
-      (data: Iuser[]) => {
+      (data: IUser[]) => {
         this.users = data;
       },
       (error) => {

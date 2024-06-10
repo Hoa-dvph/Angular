@@ -1,25 +1,32 @@
-<h3 class="text-lg font-semibold text-gray-900 dark:text-white"
-    style="font-size: 2em; font-weight: bold; margin-bottom: 20px; margin-left: 380px;">Đăng nhập tài khoản</h3>
-<form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" formControlName="email">
-        <div *ngIf="signinForm.get('email')?.invalid && (signinForm.get('email')?.dirty || signinForm.get('email')?.touched)"
-            class="error-message">
-            <div *ngIf="signinForm.get('email')?.errors?.['required']">Email là bắt buộc.</div>
-            <div *ngIf="signinForm.get('email')?.errors?.['email']">Định dạng email không hợp lệ.</div>
-            <div *ngIf="signinForm.get('email')?.errors?.['emailExists']">Email đã tồn tại.</div>
+<div class="container">
+    <h3 class="text-lg font-semibold text-gray-900 dark:text-white header-title">Đăng nhập tài khoản</h3>
+
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()" class="signin-form">
+        <div class="form-group"
+            [ngClass]="{'has-error': signinForm.get('email')?.invalid && (signinForm.get('email')?.dirty || signinForm.get('email')?.touched)}">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+            <div *ngIf="signinForm.get('email')?.invalid && (signinForm.get('email')?.dirty || signinForm.get('email')?.touched)"
+                class="error-message">
+                <div *ngIf="signinForm.get('email')?.errors?.['required']">Email là bắt buộc.</div>
+                <div *ngIf="signinForm.get('email')?.errors?.['email']">Định dạng email không hợp lệ.</div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="password">Mật khẩu</label>
-        <input type="password" class="form-control" id="password" formControlName="password">
-        <div *ngIf="signinForm.get('password')?.invalid && (signinForm.get('password')?.dirty || signinForm.get('password')?.touched)"
-            class="error-message">
-            <div *ngIf="signinForm.get('password')?.errors?.['required']">Mật khẩu là bắt buộc.</div>
-            <div *ngIf="signinForm.get('password')?.errors?.['minlength']">Mật khẩu phải có ít nhất 6 ký tự.</div>
+        <div class="form-group"
+            [ngClass]="{'has-error': signinForm.get('password')?.invalid && (signinForm.get('password')?.dirty || signinForm.get('password')?.touched)}">
+            <label for="password" class="form-label">Mật khẩu</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+            <div *ngIf="signinForm.get('password')?.invalid && (signinForm.get('password')?.dirty || signinForm.get('password')?.touched)"
+                class="error-message">
+                <div *ngIf="signinForm.get('password')?.errors?.['required']">Mật khẩu là bắt buộc.</div>
+                <div *ngIf="signinForm.get('password')?.errors?.['minlength']">Mật khẩu phải có ít nhất 6 ký tự.</div>
+            </div>
         </div>
-    </div>
-    <button type="submit" class="btn btn-primary" [disabled]="signinForm.invalid || signinForm.pending">Đăng
-        nhập</button>
-</form>
+        <div *ngIf="loginError" class="error-message">
+            {{ loginError }}
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn"
+            [disabled]="signinForm.invalid || signinForm.pending">Đăng nhập</button>
+        <a href="/signup" class="signup-link">Chưa có tài khoản? Đăng ký ngay</a>
+    </form>
+</div>
